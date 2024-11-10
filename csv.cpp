@@ -150,12 +150,12 @@ void CSVHandler::loadDataIntoBTree() {
 // }
 void CSVHandler::exportBTreeToCPP() {
     // Use the BTree's extractData function to get a list of records
-    std::vector<std::tuple<int, std::string, int, float>> data = bTree.extractData();
+    vector<tuple<int, string, int, float>> data = bTree.extractData();
 
     // Open the CSV file for writing (or overwriting)
-    std::ofstream csvFile(filename);  // We are using the same filename as the CSV file to save data
+    ofstream csvFile(filename);  // We are using the same filename as the CSV file to save data
     if (!csvFile.is_open()) {
-        std::cerr << "Failed to open CSV file for writing." << std::endl;
+        cerr << "Failed to open CSV file for writing." << endl;
         return;
     }
 
@@ -165,16 +165,16 @@ void CSVHandler::exportBTreeToCPP() {
     // Write each record from the BTree to the CSV file
     for (const auto& record : data) {
         int id;
-        std::string name;
+        string name;
         int age;
         float salary;
-        std::tie(id, name, age, salary) = record;
+        tie(id, name, age, salary) = record;
         
         csvFile << id << "," << name << "," << age << "," << salary << "\n";
     }
 
     csvFile.close();
-    std::cout << "BTree data exported to CSV file successfully!" << std::endl;
+    cout << "BTree data exported to CSV file successfully!" << endl;
 }
 
 
