@@ -61,7 +61,7 @@ This project is organized to simulate a database environment with optimized quer
 
 Run Command:  
 ```
-g++ -o main tree0.cpp BTree.cpp segtree.cpp csvAaryan.cpp -I.
+g++ -o main tree0.cpp BTree.cpp segtree.cpp csvAaryan.cpp -I
 ```
 
 ---
